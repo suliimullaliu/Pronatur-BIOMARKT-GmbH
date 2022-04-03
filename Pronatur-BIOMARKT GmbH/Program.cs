@@ -16,7 +16,7 @@ namespace Pronatur_BIOMARKT_GmbH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProNatur());
+            Application.Run(new MainMenu());
         }
     }
 }

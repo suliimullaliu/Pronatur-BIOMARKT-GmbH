@@ -32,7 +32,7 @@ namespace Pronatur_BIOMARKT_GmbH
         private void timer1_Tick(object sender, EventArgs e)
 
         { 
-            value++;
+            value+=1;
 
             progressBar1.Value = value;
             prozentWert.Text = Convert.ToString(value)+"%";
@@ -40,7 +40,11 @@ namespace Pronatur_BIOMARKT_GmbH
             if(value == 100)
             {
                 timer1.Stop();
-            Application.Exit();
+            MainMenu Menuja = new MainMenu();
+
+                Menuja.Show();
+
+                this.Hide();
             }
         }
 
