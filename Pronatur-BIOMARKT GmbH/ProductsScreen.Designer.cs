@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsScreen));
+            this.ProductsDGV = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.textBoxProductBrand = new System.Windows.Forms.TextBox();
@@ -41,9 +43,35 @@
             this.btnProductDelete = new System.Windows.Forms.Button();
             this.btnProductClear = new System.Windows.Forms.Button();
             this.btnProductEdit = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsDGV)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ProductsDGV
+            // 
+            this.ProductsDGV.AllowUserToAddRows = false;
+            this.ProductsDGV.AllowUserToDeleteRows = false;
+            this.ProductsDGV.AllowUserToResizeColumns = false;
+            this.ProductsDGV.AllowUserToResizeRows = false;
+            this.ProductsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ProductsDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.ProductsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductsDGV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ProductsDGV.Location = new System.Drawing.Point(16, 195);
+            this.ProductsDGV.MultiSelect = false;
+            this.ProductsDGV.Name = "ProductsDGV";
+            this.ProductsDGV.ReadOnly = true;
+            this.ProductsDGV.RowHeadersVisible = false;
+            this.ProductsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProductsDGV.Size = new System.Drawing.Size(763, 247);
+            this.ProductsDGV.TabIndex = 13;
+            this.ProductsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsDGV_CellContentClick);
             // 
             // label1
             // 
@@ -56,7 +84,6 @@
             this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
-  
             // 
             // textBoxProductName
             // 
@@ -88,7 +115,6 @@
             this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Marke";
-
             // 
             // label3
             // 
@@ -182,7 +208,7 @@
             this.btnProductClear.TabIndex = 11;
             this.btnProductClear.Text = "Felder Leeren";
             this.btnProductClear.UseVisualStyleBackColor = false;
-            this.btnProductClear.Click += new System.EventHandler(this.button3_Click);
+            this.btnProductClear.Click += new System.EventHandler(this.btnProductClear_Click);
             // 
             // btnProductEdit
             // 
@@ -198,15 +224,6 @@
             this.btnProductEdit.UseVisualStyleBackColor = false;
             this.btnProductEdit.Click += new System.EventHandler(this.btnProductEdit_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 195);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(763, 247);
-            this.dataGridView1.TabIndex = 13;
-            // 
             // ProductsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,7 +231,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(799, 461);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ProductsDGV);
             this.Controls.Add(this.btnProductEdit);
             this.Controls.Add(this.btnProductClear);
             this.Controls.Add(this.btnProductDelete);
@@ -232,7 +249,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductsScreen";
             this.Load += new System.EventHandler(this.ProductsScreen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,6 +269,6 @@
         private System.Windows.Forms.Button btnProductDelete;
         private System.Windows.Forms.Button btnProductClear;
         private System.Windows.Forms.Button btnProductEdit;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ProductsDGV;
     }
 }
